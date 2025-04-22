@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif; /* Or your preferred font */
+    margin: 0;
+    padding: 0;
+    display: flex; /* To arrange left and right sections side by side */
+    min-height: 100vh; /* Ensure the background covers the whole viewport */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Optional: set a maximum width for the content */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding around the content */
+}
+
+.left-content {
+    flex: 2; /* Take up more space */
+    padding-right: 40px; /* Add some spacing between the text and the menu */
+    line-height: 1.6; /* Improve readability */
+}
+
+.left-content h1, .left-content h2, .left-content p {
+    margin-bottom: 1em;
+}
+
+.right-menu {
+    flex: 1; /* Take up less space */
+    padding-left: 40px;
+    display: flex;
+    justify-content: center; /* Center the menu items horizontally */
+}
+
+.right-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align the text within the list items to the left */
+}
+
+.right-menu li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555; /* Add a subtle separator */
+    padding-bottom: 10px;
+}
+
+.right-menu li:last-child {
+    border-bottom: none; /* Remove the separator from the last item */
+}
+
+.right-menu a {
+    color: white;
+    text-decoration: none; /* Remove underlines from links */
+    display: block; /* Make the whole list item clickable */
+    padding: 5px 0;
+}
+
+.right-menu a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Basic responsive adjustments (for smaller screens) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+    .left-content, .right-menu {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center; /* Center text on smaller screens */
+    }
+    .right-menu ul {
+        text-align: center;
+    }
+    .left-content {
+        padding-right: 0;
+    }
+    .right-menu {
+        padding-left: 0;
+    }
+}
